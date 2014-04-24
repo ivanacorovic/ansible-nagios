@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+input {
+	file {
+		type => "linux-syslog"
+		path => ["/var/log/*"]
+		exclude => [ "*.gz" ]
+		codec => plain { charset => "ISO-8859-1" }
+	}
+}
+# {{ ansible_managed }}
